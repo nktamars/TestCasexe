@@ -52,13 +52,13 @@ function appendRandomGif(cssClass) {
   });
 }
 
-//for (var i = 0; i < 3; i++) {
-  // appendRandomGif('gif-1');
-  // appendRandomGif('gif-2');
-  // appendRandomGif('gif-3');
-  // appendRandomGif('gif-4');
-  // appendRandomGif('gif-5');
-//}
+// for (var i = 0; i < 3; i++) {
+  appendRandomGif('gif-1');
+  appendRandomGif('gif-2');
+  appendRandomGif('gif-3');
+  appendRandomGif('gif-4');
+  appendRandomGif('gif-5');
+// }
 
 
 
