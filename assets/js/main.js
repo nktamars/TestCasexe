@@ -36,54 +36,54 @@ function appendRandomGif(cssClass) {
   });
 
   promise.done(function (dataFromGiphy) {
-    // var objectAsString = JSON.stringify(dataFromGiphy);
-    // alert('This is the JSON from the server: ' + objectAsString);
-
-    //$('body').append('<img src="' + dataFromGiphy.data.image_url + '" />');
-
     $('.random-giphy')
       .filter('.' + cssClass)
       .attr('src', dataFromGiphy.data.image_url)
       .show();
   });
 
-  promise.fail(function(jqXHR, textStatus) {
-    alert('Request failed: ' + textStatus);
-  });
+  // promise.fail(function(jqXHR, textStatus) {
+  //   alert('Request failed: ' + textStatus);
+  // });
 }
 
-// for (var i = 0; i < 3; i++) {
   appendRandomGif('gif-1');
   appendRandomGif('gif-2');
   appendRandomGif('gif-3');
   appendRandomGif('gif-4');
   appendRandomGif('gif-5');
-// }
-
-
-
-
-
 
 
 /////////////////MODAL//////////
-$(function() {
-  //----- OPEN
-  $('[data-popup-open]').on('click', function(e)  {
-      var targeted_popup_class = jQuery(this).attr('data-popup-open');
-      $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
-      e.preventDefault();
-  });
-
-  //----- CLOSE
-  $('[data-popup-close]').on('click', function(e)  {
-      var targeted_popup_class = jQuery(this).attr('data-popup-close');
-      $('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
-      e.preventDefault();
-  });
+$('body').on('click', '.modal-open', function(e) {
+    
+  $('.modal-background, .modal').show();
+  e.preventDefault();
+})
+.on('click', '.modal-close', function(e) {
+  $('.modal-background, .modal').hide();
+  e.preventDefault();
 });
-//------ CLOSE CLICKING NOT ON THE WINDOW ????
-
-if ( !$('[data-popup-close]','.modal-background.').length ) {
-  $('<div/>').addClass('modal-background','[data-popup-close]').appendTo('body');
+if ( !$('.modal-background.modal-close').length ) {
+  $('<div/>').addClass('modal-background modal-close').appendTo('body');
 }
+$('.modal__close').click(function () {
+  $(".modal, .modal-background").hide();
+});
+
+
+
+$("#formvalidate").validate({
+  rules: {
+    Email: {
+      required: true,
+      minlength: 6
+    }
+  },
+  messages: {
+    Email: {
+      required: "Поле обязательно для заполнения",
+      email: ""
+    }
+  }
+});
