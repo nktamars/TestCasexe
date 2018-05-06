@@ -32,31 +32,30 @@
                         <a href="tel:74997777777" class="header__phone">+7(499) 777-77-77</a>
                         <a href="tel:74997777777" class="header__phone">+7(499) 777-77-77</a>
                     </div>
-                    <button type="button" class="header__phone-call" data-popup-open="popup-1">Обратная связь</button>
-                    <div class="popup" data-popup="popup-1">
-                        <div class="popup-inner">
-                           <div class="popup__title">Обратная связь</div>
-                           <form>
-                           <div class="popup__col">
-                               <label class="popup__label">Ваше имя *</label>
+                    <button type="button" class="header__phone-call modal-open">Обратная связь</button>
+                    
+                    <div class="modal">
+                           <div class="modal__title">Обратная связь</div>
+                           <form id="formvalidate">
+                           <div class="modal__col">
+                               <label class="modal__label">Ваше имя *</label>
                                <input type="text">
                         </div>
-                        <div class="popup__col">
-                                <label class="popup__label">Телефон *</label>
+                        <div class="modal__col">
+                                <label class="modal__label">Телефон *</label>
                                 <input type="text">
                          </div>
-                         <div class="popup__col">
-                                <label class="popup__label">Email *</label>
-                                <input type="email" class="popup__error" placeholder="Поле обязательно для заполнения">
+                         <div class="modal__col">
+                                <label class="modal__label">Email *</label>
+                                <input type="email" class="modal__error"  name="Email" placeholder="">
                          </div>
-                         <div class="popup__col">
-                                <label class="popup__label">Сообщение</label>
+                         <div class="modal__col">
+                                <label class="modal__label">Сообщение</label>
                                 <input type="text">
                          </div>
-                         <button type="submit" class="popup__button">Отправить</button>
+                         <button type="submit" class="modal__button">Отправить</button>
                         </form>
-                            <a class="popup-close" data-popup-close="popup-1" href="#">&times;</a>
-                        </div>
+                        <div class="modal__close"><img src="assets/img/close.jpg" alt="" class="modal__close-img"></div>
                     </div>
                 </div>
             </div>
@@ -314,6 +313,7 @@
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
     <script src="assets/js/slick.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
